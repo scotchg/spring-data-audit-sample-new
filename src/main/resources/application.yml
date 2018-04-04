@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: spring-data-audit-sample
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mysql
+    username: mysql
+    password: mysql
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+system:
+  jpa:
+    auditor: ${spring.application.name}
+
