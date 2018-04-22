@@ -1,4 +1,4 @@
-package com.github.scotchg.sample.jpa;
+package com.github.scotchg.sample.jpa.audit;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.AuditorAware;

@@ -11,8 +11,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
@@ -24,11 +23,11 @@ public abstract class BaseEntity {
     String creator;
     @CreatedDate
     @Column(name = "CREATED_AT")
-    LocalDateTime createdAt;
+    OffsetDateTime createdAt;
     @LastModifiedBy
     @Column(name = "MODIFIER")
     String modifier;
     @LastModifiedDate
     @Column(name = "MODIFIED_AT")
-    LocalDateTime modifiedAt;
+    OffsetDateTime modifiedAt;
 }
