@@ -22,7 +22,9 @@ public class JpaConfiguration {
     }
 
     @Bean
-    public AuditorAware<String> auditorProvider(@Value("${spring.application.name}") String applicationName) {
-        return new RequestHeaderAuditAware("X-Request-User",applicationName);
+    public AuditorAware<String> auditorProvider(
+            @Value("${system.jpa.auditUserHeader}") String auditorHeaderKey,
+            @Value("${spring.application.name}") String applicationName) {
+        return new RequestHeaderAuditAware(auditorHeaderKey, applicationName);
     }
 }
